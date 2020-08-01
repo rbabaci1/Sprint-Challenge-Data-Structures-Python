@@ -13,8 +13,11 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-dic = {n: n for n in names_2}
+dic = {n for n in names_2}
 [duplicates.append(name) for name in names_1 if name in dic]
+
+# stretch solution, it's less efficient than the first one.
+# [duplicates.append(n) for n in names_1 if n in names_2]
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
